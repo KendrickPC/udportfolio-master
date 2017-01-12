@@ -524,7 +524,9 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+// Creating less pizzas (originally 200) increases fps - it doesn't make sense 
+// to create 200 pizzas because a limited number appear on the screen at any given time.  
+  for (var i = 0; i < 35; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";

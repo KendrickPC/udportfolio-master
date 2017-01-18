@@ -455,7 +455,7 @@ var resizePizzas = function(size) {
     var getrandomPizzaContainer = document.getElementsByClassName("randomPizzaContainer");
     // Moving variables dx, i, and newwidth outside the 'for' loop to reduce pizza resizing time 
       var dx = determineDx(getrandomPizzaContainer[i], size);
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+      var i = 0
       var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
     for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
 

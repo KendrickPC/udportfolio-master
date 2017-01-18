@@ -454,12 +454,15 @@ var resizePizzas = function(size) {
    // Changing 'querySelectorAll' to 'getElementsByClassName' reduces the amount of time to resize pizzas 
     var getrandomPizzaContainer = document.getElementsByClassName("randomPizzaContainer");
     // Moving variables dx, i, and newwidth outside the 'for' loop to reduce pizza resizing time 
-      var dx = determineDx(getrandomPizzaContainer[i], size);
-      var i = 0
-      var newwidth = (getrandomPizzaContainer[i].offsetWidth + dx) + 'px';
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-
+    var dx = determineDx(getrandomPizzaContainer[i], size);
+    var i = 0
+    var newWidth = (getrandomPizzaContainer[i].offsetWidth + dx) + 'px';
+    
+    for (var i = 0; i < (getrandomPizzaContainer).length; i++) {
+      getrandomPizzaContainer[i].style.width = newWidth;
     }
+    console.log(dx);
+    console.log(newWidth);
   }
 
 // end changePizzaSizes function edit

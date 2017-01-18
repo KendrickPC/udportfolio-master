@@ -447,14 +447,22 @@ var resizePizzas = function(size) {
     return dx;
   }
 
+// begin changePizzaSizes function edit
+
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
+   // Changing 'querySelectorAll' to 'getElementsByClassName' reduces the amount of time to resize pizzas 
+    var getrandomPizzaContainer = document.getElementsByClassName("randomPizzaContainer");
+    // Moving variables dx, i, and newwidth outside the 'for' loop to reduce pizza resizing time 
+      var dx = determineDx(getrandomPizzaContainer[i], size);
       document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
+    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
+
     }
   }
+
+// end changePizzaSizes function edit
 
   changePizzaSizes(size);
 
@@ -468,7 +476,7 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
-// Moving variable outside loop decreases load time
+// Moved pizzasDiv outside of forloop to decrease load time
 var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < 100; i++) {
   pizzasDiv.appendChild(pizzaElementGenerator(i));

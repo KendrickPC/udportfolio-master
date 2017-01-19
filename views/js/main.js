@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 Welcome to the 60fps project! Your goal is to make Cam's Pizzeria website run
 jank-free at 60 frames per second.
@@ -18,6 +20,7 @@ cameron *at* udacity *dot* com
 
 // As you may have realized, this website randomly generates pizzas.
 // Here are arrays of all possible pizza ingredients.
+
 var pizzaIngredients = {};
 pizzaIngredients.meats = [
   "Pepperoni",
@@ -461,8 +464,8 @@ var resizePizzas = function(size) {
     for (var i = 0; i < (getrandomPizzaContainer).length; i++) {
       getrandomPizzaContainer[i].style.width = newWidth;
     }
-    console.log(dx);
-    console.log(newWidth);
+    // console.log(dx);
+    // console.log(newWidth);
   }
 
 // end changePizzaSizes function edit

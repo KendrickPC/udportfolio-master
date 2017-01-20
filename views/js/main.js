@@ -406,16 +406,17 @@ var resizePizzas = function(size) {
   window.performance.mark("mark_start_resize");   // User Timing API function
 
   // Changes the value for the size of the pizza above the slider
+  // Changed querySelector to getElementById to reduce time to generate pizzas on load for the first 10 frames. 
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
-        document.querySelector("#pizzaSize").innerHTML = "Small";
+        document.getElementById("pizzaSize").innerHTML = "Small";
         return;
       case "2":
-        document.querySelector("#pizzaSize").innerHTML = "Medium";
+        document.getElementById("pizzaSize").innerHTML = "Medium";
         return;
       case "3":
-        document.querySelector("#pizzaSize").innerHTML = "Large";
+        document.getElementById("pizzaSize").innerHTML = "Large";
         return;
       default:
         console.log("bug in changeSliderLabel");
@@ -425,9 +426,10 @@ var resizePizzas = function(size) {
   changeSliderLabel(size);
 
    // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
+   // The variable windowWidth webAPI call querySelector was changed to getElementById
   function determineDx (elem, size) {
     var oldWidth = elem.offsetWidth;
-    var windowWidth = document.querySelector("#randomPizzas").offsetWidth;
+    var windowWidth = document.getElementById("randomPizzas").offsetWidth;
     var oldSize = oldWidth / windowWidth;
 
     // Changes the slider value to a percent width
@@ -456,9 +458,9 @@ var resizePizzas = function(size) {
   function changePizzaSizes(size) {
    // Changing 'querySelectorAll' to 'getElementsByClassName' reduces the amount of time to resize pizzas 
     var getrandomPizzaContainer = document.getElementsByClassName("randomPizzaContainer");
-    // Moving variables dx, i, and newwidth outside the 'for' loop to reduce pizza resizing time 
-    var dx = determineDx(getrandomPizzaContainer[i], size);
+    // Moving variables i, dx, and newwidth outside the 'for' loop to reduce pizza resizing time 
     var i = 0
+    var dx = determineDx(getrandomPizzaContainer[i], size);
     var newWidth = (getrandomPizzaContainer[i].offsetWidth + dx) + 'px';
     
     for (var i = 0; i < (getrandomPizzaContainer).length; i++) {

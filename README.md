@@ -20,20 +20,30 @@ Your challenge, if you wish to accept it (and we sure hope you will), is to opti
 Some useful tips to help you get started:
 
 1. Check out the repository
-1. To inspect the site on your phone, you can run a local server
+2. To inspect the site on your phone, you can run a local server
 
   ```bash
   $> cd /path/to/your-project-folder
-  $> python -m SimpleHTTPServer 8080
+  $> python -m SimpleHTTPServer 8000
   ```
 
-1. Open a browser and visit localhost:8080
-1. Download and install [ngrok](https://ngrok.com/) to make your local server accessible remotely.
+3. Open a browser and visit localhost:8000
+4. Download and install [ngrok](https://ngrok.com/) to make your local server accessible remotely.
 
   ``` bash
   $> cd /path/to/your-project-folder
-  $> ngrok 8080
+  $> ./ngrok 8000
   ```
+
+5. Added "use strict"; to the top of JS File
+Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
+6. changeSliderLabel(size) function --> Changed document.querySelector to getElementById on case 1,2, and 3. This reduces time to generate pizzas on load by for the first 10 frames. 
+Reference: https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+7. In function determineDx, the variable windowWidth webAPI call to querySelector was changed to getElementById. 
+
+
+
+-----------------------------------------------------------------------
 
 1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
 

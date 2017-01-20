@@ -40,6 +40,9 @@ Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Str
 6. changeSliderLabel(size) function --> Changed document.querySelector to getElementById on case 1,2, and 3. This reduces time to generate pizzas on load by for the first 10 frames. 
 Reference: https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
 7. In function determineDx, the variable windowWidth webAPI call to querySelector was changed to getElementById. 
+8. Placed variable i above variable dx in function changePizzaSizes so that i can be declared before running dx
+9. Changed updatePositions function variable items from querySelector to getElementById JS API call. Removed the period in front of 'mover'.
+10. 
 
 
 

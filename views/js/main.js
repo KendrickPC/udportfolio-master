@@ -20,7 +20,6 @@ cameron *at* udacity *dot* com
 
 // As you may have realized, this website randomly generates pizzas.
 // Here are arrays of all possible pizza ingredients.
-
 var pizzaIngredients = {};
 pizzaIngredients.meats = [
   "Pepperoni",
@@ -409,13 +408,13 @@ var resizePizzas = function(size) {
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
-        document.querySelector("#pizzaSize").innerHTML = "Small";
+        document.getElementById("pizzaSize").innerHTML = "Small";
         return;
       case "2":
-        document.querySelector("#pizzaSize").innerHTML = "Medium";
+        document.getElementById("pizzaSize").innerHTML = "Medium";
         return;
       case "3":
-        document.querySelector("#pizzaSize").innerHTML = "Large";
+        document.getElementById("pizzaSize").innerHTML = "Large";
         return;
       default:
         console.log("bug in changeSliderLabel");
@@ -456,16 +455,16 @@ var resizePizzas = function(size) {
   function changePizzaSizes(size) {
    // Changing 'querySelectorAll' to 'getElementsByClassName' reduces the amount of time to resize pizzas 
     var getrandomPizzaContainer = document.getElementsByClassName("randomPizzaContainer");
-    // Moving variables dx, i, and newwidth outside the 'for' loop to reduce pizza resizing time 
-    var dx = determineDx(getrandomPizzaContainer[i], size);
+    // Moving variables i, dx, and newwidth outside the 'for' loop to reduce pizza resizing time 
     var i = 0
+    var dx = determineDx(getrandomPizzaContainer[i], size);
     var newWidth = (getrandomPizzaContainer[i].offsetWidth + dx) + 'px';
     
     for (var i = 0; i < (getrandomPizzaContainer).length; i++) {
       getrandomPizzaContainer[i].style.width = newWidth;
     }
-    // console.log(dx);
-    // console.log(newWidth);
+    console.log(dx);
+    console.log(newWidth);
   }
 
 // end changePizzaSizes function edit

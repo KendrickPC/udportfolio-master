@@ -6,47 +6,19 @@ December 2016: Notes
 
 ### Getting started
 
-<<<<<<< HEAD
 1. Check out the project Git repository
-||||||| merged common ancestors
-Some useful tips to help you get started:
-
-1. Check out the repository
-1. To inspect the site on your phone, you can run a local server
-=======
-Some useful tips to help you get started:
-
-1. Check out the repository
-2. To inspect the site on your phone, you can run a local server
->>>>>>> 2d64a779e4792be57dd51c4a24df5923605d3a0e
 
 2. Run a local server
   ```bash
   $> cd /path/to/your-project-folder
-  $> python -m SimpleHTTPServer 8000
+  $> python -m SimpleHTTPServer 8080
   ```
 3. Open a browser and visit localhost:8080
 
-<<<<<<< HEAD
 4. Download and install [ngrok](https://ngrok.com/) to make your local server accessible remotely.
-||||||| merged common ancestors
-1. Open a browser and visit localhost:8080
-1. Download and install [ngrok](https://ngrok.com/) to make your local server accessible remotely.
-
-=======
-3. Open a browser and visit localhost:8000
-4. Download and install [ngrok](https://ngrok.com/) to make your local server accessible remotely.
-
->>>>>>> 2d64a779e4792be57dd51c4a24df5923605d3a0e
   ``` bash
   $> cd /path/to/your-project-folder
-<<<<<<< HEAD
   $> ./ngrok 8080
-||||||| merged common ancestors
-  $> ngrok 8080
-=======
-  $> ./ngrok 8000
->>>>>>> 2d64a779e4792be57dd51c4a24df5923605d3a0e
   ```
 5. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
 
@@ -86,32 +58,13 @@ e.g.
 
 var top = document.body.scrollTop / 1250;
 
-<<<<<<< HEAD
 for (var i = 0, len = items.length, phase; i < len; i++) {
     phase = Math.sin(top + i % 5);
     // Other statements
 }
-||||||| merged common ancestors
-1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
-=======
-5. Added "use strict"; to the top of JS File
-Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
-6. changeSliderLabel(size) function --> Changed document.querySelector to getElementById on case 1,2, and 3. This reduces time to generate pizzas on load by for the first 10 frames. 
-Reference: https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
-7. In function determineDx, the variable windowWidth webAPI call to querySelector was changed to getElementById. 
-8. Placed variable i above variable dx in function changePizzaSizes so that i can be declared before running dx
-9. Changed updatePositions function variable items from querySelector to getElementById JS API call. Removed the period in front of 'mover'.
-10. 
-
-
-
------------------------------------------------------------------------
-
-1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
->>>>>>> 2d64a779e4792be57dd51c4a24df5923605d3a0e
 
 16. Decreased size and quality of pizzeria.jpg
 
-### Optimization Tips and Tricks
+17. Finished changes to views/js/main.js file
 
 

@@ -67,4 +67,7 @@ for (var i = 0, len = items.length, phase; i < len; i++) {
 
 17. Finished changes to views/js/main.js file
 
+18. views/css/style.css file .mover adjusted to increase  sites performance with hardware accelerated CSS. The GPU can be trigger by including the transform: translateZ(0); declaration. Furthermore, adding the backface-visibility property with the hidden value can make a big difference in equipments as it enables hardware acceleration. Both properties are applied to the .mover class selector.
+Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility
+
 

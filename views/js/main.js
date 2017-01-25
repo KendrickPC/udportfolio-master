@@ -405,6 +405,7 @@ var resizePizzas = function(size) {
   window.performance.mark("mark_start_resize");   // User Timing API function
 
   // Changes the value for the size of the pizza above the slider
+  // Changed querySelector to getElementById to reduce time to generate pizzas on load for the first 10 frames. 
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
@@ -424,6 +425,7 @@ var resizePizzas = function(size) {
   changeSliderLabel(size);
 
    // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
+   // The variable windowWidth webAPI call querySelector was changed to getElementById
   function determineDx (elem, size) {
     var oldWidth = elem.offsetWidth;
     var windowWidth = document.getElementById("randomPizzas").offsetWidth;
@@ -512,10 +514,26 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
+<<<<<<< HEAD
   var items = document.getElementsByClassName('mover');
   var top = document.body.scrollTop / 1250; 
   for (var i = 0, len = items.length, phase; i < len; i++) {
     phase = Math.sin(top + i % 5);
+||||||| merged common ancestors
+
+  var items = document.querySelectorAll('.mover');
+  // Declaring the scroll variable below increases fps
+  var scroll = (document.body.scrollTop / 1250); 
+  for (var i = 0; i < items.length; i++) {
+    var phase = Math.sin(scroll + (i % 5));
+=======
+  // changed querySelector to getElementById 
+  var items = document.getElementById('mover');
+  // Declaring the scroll variable below increases fps
+  var scroll = (document.body.scrollTop / 1250); 
+  for (var i = 0; i < items.length; i++) {
+    var phase = Math.sin(scroll + (i % 5));
+>>>>>>> 2d64a779e4792be57dd51c4a24df5923605d3a0e
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
   // User Timing API to the rescue again. Seriously, it's worth learning.

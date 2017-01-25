@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /*
 Welcome to the 60fps project! Your goal is to make Cam's Pizzeria website run
@@ -426,7 +426,7 @@ var resizePizzas = function(size) {
    // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
   function determineDx (elem, size) {
     var oldWidth = elem.offsetWidth;
-    var windowWidth = document.querySelector("#randomPizzas").offsetWidth;
+    var windowWidth = document.getElementById("randomPizzas").offsetWidth;
     var oldSize = oldWidth / windowWidth;
 
     // Changes the slider value to a percent width
@@ -450,7 +450,6 @@ var resizePizzas = function(size) {
   }
 
 // begin changePizzaSizes function edit
-
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
    // Changing 'querySelectorAll' to 'getElementsByClassName' reduces the amount of time to resize pizzas 
@@ -466,7 +465,6 @@ var resizePizzas = function(size) {
     console.log(dx);
     console.log(newWidth);
   }
-
 // end changePizzaSizes function edit
 
   changePizzaSizes(size);
@@ -514,15 +512,12 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-
-  var items = document.querySelectorAll('.mover');
-  // Declaring the scroll variable below increases fps
-  var scroll = (document.body.scrollTop / 1250); 
-  for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin(scroll + (i % 5));
+  var items = document.getElementsByClassName('mover');
+  var top = document.body.scrollTop / 1250; 
+  for (var i = 0, len = items.length, phase; i < len; i++) {
+    phase = Math.sin(top + i % 5);
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
-
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
   window.performance.mark("mark_end_frame");
@@ -540,17 +535,18 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
+  var movingPizzas = document.getElementById('movingPizzas1');
 // Creating less pizzas (originally 200) increases fps - it doesn't make sense 
 // to create 200 pizzas because a limited number appear on the screen at any given time.  
-  for (var i = 0; i < 35; i++) {
-    var elem = document.createElement('img');
+  for (var i = 0, elem; i < 35; i++) {
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    movingPizzas.appendChild(elem);
   }
   updatePositions();
 });

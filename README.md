@@ -70,4 +70,14 @@ for (var i = 0, len = items.length, phase; i < len; i++) {
 18. views/css/style.css file .mover adjusted to increase  sites performance with hardware accelerated CSS. The GPU can be trigger by including the transform: translateZ(0); declaration. Furthermore, adding the backface-visibility property with the hidden value can make a big difference in equipments as it enables hardware acceleration. Both properties are applied to the .mover class selector.
 Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility
 
+19. Removed testing of console.log("Average scripting time to generate last 10 frames: " + sum / 10 + "ms"); for faster load time. 
 
+20. Removed testing of console.log("Time to generate pizzas on load: " + timeToGenerate[0].duration + "ms"); for faster load time.
+
+21. Removed testing of console.log("Time to generate pizzas on load: " + timeToGenerate[0].duration + "ms"); for faster load time.
+
+22. Removed testing of console.log(dx); & console.log(newWidth); for faster load time.
+
+23. Removed testing of console.log("bug in sizeSwitcher"); for faster load time.
+
+24. Removed testing of console.log("bug in changeSliderLabel"); for faster load time. 
